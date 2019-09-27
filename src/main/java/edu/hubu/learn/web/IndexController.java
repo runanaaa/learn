@@ -6,6 +6,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import edu.hubu.learn.entity.User;
+import edu.hubu.learn.entity.Info;
+import edu.hubu.learn.service.InfoService;
 import edu.hubu.learn.service.UserService;
 
 @Controller
@@ -14,6 +16,18 @@ public class IndexController {
 
     @Autowired
     private UserService userService;
+
+    @Autowired
+    private InfoService infoService;
+
+    @RequestMapping("/info")
+    public ModelAndView info() {
+        ModelAndView mav = new ModelAndView();
+        Info info = infoService.getUser(1l);
+        mav.addObject("info", info);
+        mav.setViewName("user");
+        return mav;
+    }
 
     @RequestMapping("/")
     public ModelAndView index() {
@@ -30,4 +44,5 @@ public class IndexController {
         mav.setViewName("user");
         return mav;
     }
+    
 }
