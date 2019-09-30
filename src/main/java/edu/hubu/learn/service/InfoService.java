@@ -1,5 +1,8 @@
 package edu.hubu.learn.service;
 
+import java.security.PublicKey;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Service;
@@ -11,9 +14,12 @@ import edu.hubu.learn.entity.Info;
 public class InfoService {
 
     @Autowired
-    private InfoDao userDao;
+    private InfoDao infoDao;
 
     public Info getUser(Long id) {
-        return userDao.findById(id).get();
+        return infoDao.findById(id).get();
     }
+    public List<Info> getInfos(){
+        return  infoDao.findAll();
+}
 }

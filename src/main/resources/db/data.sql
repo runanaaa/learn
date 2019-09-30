@@ -5,4 +5,5 @@ INSERT INTO `user` (id, username, password, role) VALUES ('4', 'user2', '1234', 
 INSERT INTO `user` (id, username, password, role) VALUES ('5', 'user3', '1234', 'user');
 INSERT INTO `user` (id, username, password, role) VALUES ('6', 'user4', '1234', 'user');
 INSERT INTO `info` (id, USERNAME, GRADE, PHONE,NUMBER) VALUES ('1', 'WAN','3','1524564','372964Y1209');
+INSERT INTO `info` (id, USERNAME, GRADE, PHONE,NUMBER) VALUES ('2', 'fang','34','1556783','42102257356');
 COMMIT;
