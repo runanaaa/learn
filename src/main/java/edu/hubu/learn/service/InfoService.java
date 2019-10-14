@@ -22,4 +22,13 @@ public class InfoService {
     public List<Info> getInfos(){
         return  infoDao.findAll();
 }
+public Info addInfo(Info info) {
+
+
+
+    return infoDao.save(info);
+
+
+
+}
 }

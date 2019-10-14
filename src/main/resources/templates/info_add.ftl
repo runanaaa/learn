@@ -35,24 +35,9 @@
 
 
     <!-- Bootstrap -->
-
-
-
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@3.3.7/dist/css/bootstrap.min.css" rel="stylesheet">
-
-
-
-
-
-
-
     <!-- HTML5 shim 和 Respond.js 是为了让 IE8 支持 HTML5 元素和媒体查询（media queries）功能 -->
-
-
-
     <!-- 警告：通过 file:// 协议（就是直接将 html 页面拖拽到浏览器中）访问页面时 Respond.js 不起作用 -->
-
-
 
     <!--[if lt IE 9]>
 
@@ -94,11 +79,11 @@
 
 
 
-          <li role="presentation" class="active"><a href="/info/list">列表</a></li>
+          <li role="presentation"><a href="/info/list">列表</a></li>
 
 
 
-          <li role="presentation"><a href="/info/add">新增</a></li>
+          <li role="presentation" class="active"><a href="/info/add">新增</a></li>
 
 
 
@@ -114,35 +99,47 @@
 
 
 
-        <table class="table table-hover">
+        <form action="/info/do_add">
 
 
 
-          <thead>
+            <div class="form-group">
 
 
 
-          <th>ID</th><th>联系方式</th><th>证件号码</th>
+                <label for="PHONE">联系方式</label>
 
 
 
-          </thead>
+                <input type="text" class="form-control" id="PHONE" name="PHONE" placeholder="请输入联系方式">
 
 
 
-          <tbody>
-         <#list infos as info>
-         <tr>
-         <td>${info.id}</td><td>${info.PHONE}</td><td>${info.NUMBER}</td>
-         </tr>
-
-          </#list>
-
-          </tbody>
+            </div>
 
 
 
-        </table>
+            <div class="form-group">
+
+
+
+                <label for="NUMBER">证件号</label>
+
+
+
+                <input type="text" class="form-control" id="NUMBER" name="NUMBER" placeholder="请输入证件号">
+
+
+
+            </div>
+
+
+
+            <button type="submit" class="btn btn-default">确认</button>
+
+
+
+        </form>
 
 
 
@@ -183,4 +180,3 @@
 
 
 </html>
-

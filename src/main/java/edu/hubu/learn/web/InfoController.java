@@ -39,4 +39,53 @@ public class InfoController {
     return mav;
 
   }
+  @RequestMapping("/add")
+
+
+
+  public ModelAndView addInfo() {
+
+
+
+      ModelAndView mav = new ModelAndView();
+
+
+
+      mav.setViewName("info_add");
+
+
+
+      return mav;
+
+
+
+  }
+
+
+
+
+
+
+
+  @RequestMapping("/do_add")
+
+
+
+  public ModelAndView doAddInfo(Info info) {
+
+
+
+      infoService.addInfo(info);
+
+
+
+      ModelAndView mav = new ModelAndView("redirect:/info/list");
+
+
+
+      return mav;
+
+
+
+  }
 }
