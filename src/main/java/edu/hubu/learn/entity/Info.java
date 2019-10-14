@@ -12,7 +12,7 @@ public class Info {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String USERPHONE;
+    private String USERNAME;
 
     private String GRADE;
 

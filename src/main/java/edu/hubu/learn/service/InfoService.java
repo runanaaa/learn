@@ -16,19 +16,21 @@ public class InfoService {
     @Autowired
     private InfoDao infoDao;
 
-    public Info getUser(Long id) {
+    public Info getInfo(Long id) {
         return infoDao.findById(id).get();
     }
     public List<Info> getInfos(){
         return  infoDao.findAll();
 }
 public Info addInfo(Info info) {
-
-
-
     return infoDao.save(info);
-
-
-
 }
+
+public void deleteInfo(Long id) {
+    infoDao.deleteById(id);
 }
+
+public void modifyInfo(Info info) {
+    infoDao.save(info);
+}
+} 

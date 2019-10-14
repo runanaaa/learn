@@ -24,7 +24,7 @@ public class InfoController {
     @RequestMapping("/{id}")
     public ModelAndView info(@PathVariable Long id) {
         ModelAndView mav = new ModelAndView();
-       Info info = infoService.getUser(id);
+       Info info = infoService.getInfo(id);
         mav.addObject("info", info);
         mav.setViewName("user");
         return mav;
@@ -40,52 +40,36 @@ public class InfoController {
 
   }
   @RequestMapping("/add")
-
-
-
   public ModelAndView addInfo() {
-
-
-
       ModelAndView mav = new ModelAndView();
-
-
-
       mav.setViewName("info_add");
-
-
-
       return mav;
-
-
-
   }
-
-
-
-
-
-
 
   @RequestMapping("/do_add")
-
-
-
   public ModelAndView doAddInfo(Info info) {
-
-
-
       infoService.addInfo(info);
-
-
-
       ModelAndView mav = new ModelAndView("redirect:/info/list");
-
-
-
       return mav;
-
-
-
   }
+  @RequestMapping("/delete/{id}")
+  public ModelAndView delete(@PathVariable Long id) {
+      infoService.deleteInfo(id);
+      ModelAndView mav = new ModelAndView("redirect:/info/list");
+      return mav;
+  }
+  @RequestMapping("/modify/{id}")
+    public ModelAndView modifyInfo(@PathVariable Long id) {
+        ModelAndView mav = new ModelAndView();
+        mav.addObject("info", infoService.getInfo(id));
+        mav.setViewName("info_modify");
+        return mav;
+    }
+
+    @RequestMapping("/do_modify")
+    public ModelAndView doModifyInfo(Info info) {
+        infoService.modifyInfo(info);
+        ModelAndView mav = new ModelAndView("redirect:/info/list");
+        return mav;
+    }
 }
