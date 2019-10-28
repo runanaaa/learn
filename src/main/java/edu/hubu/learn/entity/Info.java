@@ -19,4 +19,6 @@ public class Info {
     private String  PHONE;
 
     private String  NUMBER;
+    @Column(name="avatar_url")
+    private String avatar;
 }
